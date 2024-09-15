@@ -1,9 +1,10 @@
+# 请注意，此文件仅作为开发调试使用，在部署时，会用 k8s ConfigMap 全部替换掉
 app:
-  title: Scaffolded Backstage App
+  title: xlabs developer platform
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: XLabs
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins

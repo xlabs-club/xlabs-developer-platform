@@ -2,12 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: xlabs-developer-platform
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  description: Xlabs developer platform based on Backstage.
+  annotations:
+    github.com/project-slug: xlabs-club/xlabs-developer-platform
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: john@example.com
+  owner: xlabs-club
   lifecycle: experimental

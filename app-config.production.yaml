@@ -1,6 +1,10 @@
 app:
+  title: xlabs developer platform
   # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   baseUrl: http://localhost:7007
+
+organization:
+  name: XLabs
 
 backend:
   # Note that the baseUrl should be the URL that the browser and other clients
@@ -21,12 +25,6 @@ backend:
       port: ${POSTGRES_PORT}
       user: ${POSTGRES_USER}
       password: ${POSTGRES_PASSWORD}
-      # https://node-postgres.com/features/ssl
-      # you can set the sslmode configuration option via the `PGSSLMODE` environment variable
-      # see https://www.postgresql.org/docs/current/libpq-ssl.html Table 33.1. SSL Mode Descriptions (e.g. require)
-      # ssl:
-      #   ca: # if you have a CA file and want to verify it you can uncomment this section
-      #     $file: <file-path>/ca/server.crt
 
 auth:
   providers:

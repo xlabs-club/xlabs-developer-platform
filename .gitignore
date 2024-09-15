@@ -14,7 +14,7 @@ coverage
 
 # Dependencies
 node_modules/
-
+package-lock.json
 # Yarn 3 files
 .pnp.*
 .yarn/*
@@ -52,3 +52,7 @@ site
 
 # E2E test reports
 e2e-test-report/
+
+# IDE
+.idea
+.vscode
