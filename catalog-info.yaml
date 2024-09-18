@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: xlabs-developer-platform
+  description: Xlabs developer platform based on Backstage.
+  annotations:
+    github.com/project-slug: xlabs-club/xlabs-developer-platform
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  owner: xlabs-club
+  lifecycle: experimental
