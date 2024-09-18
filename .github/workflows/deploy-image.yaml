@@ -34,7 +34,7 @@ jobs:
       
       - name: Install package
         run: |
-          yarn install
+          yarn install --immutable
 
       - name: Node build
         run: |
