@@ -15,7 +15,7 @@ coverage
 # Dependencies
 node_modules/
 package-lock.json
-# Yarn 3 files
+# Yarn files
 .pnp.*
 .yarn/*
 !.yarn/patches
