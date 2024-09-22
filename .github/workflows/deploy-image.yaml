@@ -64,11 +64,11 @@ jobs:
           # Strip git ref prefix from version
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
 
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^native-v//')
+          # Strip "v" prefix from tag name, keep the number version
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
 
           yarn build-image \
             --tag $IMAGE_NAME:$VERSION \
-            --tag $IMAGE_NAME:lastest \
+            --tag $IMAGE_NAME:latest \
             --platform linux/amd64,linux/arm64 \
             --push
