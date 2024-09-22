@@ -59,7 +59,7 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Push image
+      - name: Build and Push image
         run: |
           # Strip git ref prefix from version
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
