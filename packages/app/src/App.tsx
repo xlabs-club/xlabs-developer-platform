@@ -29,6 +29,7 @@ import { Root } from './components/Root';
 import {
   AlertDisplay,
   OAuthRequestDialog,
+  ProxiedSignInPage,
   SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
@@ -36,6 +37,7 @@ import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { configApiRef, useApi } from '@backstage/core-plugin-api';
 
 const app = createApp({
   apis,
@@ -57,7 +59,19 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => {
+      const configApi = useApi(configApiRef);
+      if (configApi.getString('auth.environment') === 'development') {
+        return (
+          <SignInPage
+            {...props}
+            providers={['guest']}
+          />
+        );
+      }
+      return <ProxiedSignInPage {...props} provider="oauth2Proxy" />;
+    },
   },
 });
 

@@ -19,7 +19,10 @@ backend.add(import('@backstage/plugin-techdocs-backend/alpha'));
 backend.add(import('@backstage/plugin-auth-backend'));
 // See https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin
 backend.add(import('@backstage/plugin-auth-backend-module-guest-provider'));
-// See https://backstage.io/docs/auth/guest/provider
+// See https://backstage.io/docs/auth/oauth2-proxy/provider/
+backend.add(import('@backstage/plugin-auth-backend-module-oauth2-proxy-provider'));
+// See https://github.com/backstage/community-plugins/tree/main/workspaces/keycloak/plugins/catalog-backend-module-keycloak
+backend.add(import('@backstage-community/plugin-catalog-backend-module-keycloak'));
 
 // catalog plugin
 backend.add(import('@backstage/plugin-catalog-backend/alpha'));
