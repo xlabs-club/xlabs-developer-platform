@@ -2769,6 +2769,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@backstage-community/plugin-catalog-backend-module-keycloak@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@backstage-community/plugin-catalog-backend-module-keycloak@npm:3.2.1"
+  dependencies:
+    "@backstage/backend-plugin-api": "npm:^1.0.1"
+    "@backstage/catalog-model": "npm:^1.7.0"
+    "@backstage/errors": "npm:^1.2.4"
+    "@backstage/plugin-catalog-node": "npm:^1.13.1"
+    "@keycloak/keycloak-admin-client": "npm:24.0.5"
+    inclusion: "npm:^1.0.1"
+    lodash: "npm:^4.17.21"
+    pg-format: "npm:^1.0.4"
+    uuid: "npm:^9.0.1"
+  checksum: 10c0/884fcefac88562dc078d6deb26e90632f213e001bed850f41145c43ea3a8b6e315d891f731ec91eb622d03d8dd05e3120214c9c49b879b6230682f9be2442182
+  languageName: node
+  linkType: hard
+
 "@backstage/app-defaults@npm:^1.5.12":
   version: 1.5.12
   resolution: "@backstage/app-defaults@npm:1.5.12"
@@ -7221,6 +7238,17 @@ __metadata:
   version: 1.1.4
   resolution: "@kamilkisiela/fast-url-parser@npm:1.1.4"
   checksum: 10c0/2c85202cb4924720ac812c8bc06967fd5df4db759a68aa3acc2962b8cf9e2b3bc131de863f00473c0b0602df13891b35140f667a87eea04c9b897b6c1ae89c4a
+  languageName: node
+  linkType: hard
+
+"@keycloak/keycloak-admin-client@npm:24.0.5":
+  version: 24.0.5
+  resolution: "@keycloak/keycloak-admin-client@npm:24.0.5"
+  dependencies:
+    camelize-ts: "npm:^3.0.0"
+    url-join: "npm:^5.0.0"
+    url-template: "npm:^3.1.1"
+  checksum: 10c0/84b598c3f81559da739bfff2c61bc1639335985d92a5c03be5c1e749a5e4d6e1c6e49de5b65867b3e9e8fd11be30f8c199b595e15ef8f6da1d629e398a04b391
   languageName: node
   linkType: hard
 
@@ -14056,6 +14084,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "backend@workspace:packages/backend"
   dependencies:
+    "@backstage-community/plugin-catalog-backend-module-keycloak": "npm:^3.2.1"
     "@backstage/backend-defaults": "npm:^0.5.1"
     "@backstage/cli": "npm:^0.28.0"
     "@backstage/config": "npm:^1.2.0"
@@ -14063,6 +14092,7 @@ __metadata:
     "@backstage/plugin-auth-backend": "npm:^0.23.1"
     "@backstage/plugin-auth-backend-module-github-provider": "npm:^0.2.1"
     "@backstage/plugin-auth-backend-module-guest-provider": "npm:^0.2.1"
+    "@backstage/plugin-auth-backend-module-oauth2-proxy-provider": "npm:^0.2.1"
     "@backstage/plugin-auth-node": "npm:^0.5.3"
     "@backstage/plugin-catalog-backend": "npm:^1.27.0"
     "@backstage/plugin-catalog-backend-module-logs": "npm:^0.1.2"
@@ -14708,7 +14738,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"callsites@npm:^3.0.0":
+"callsites@npm:^3.0.0, callsites@npm:^3.1.0":
   version: 3.1.0
   resolution: "callsites@npm:3.1.0"
   checksum: 10c0/fff92277400eb06c3079f9e74f3af120db9f8ea03bad0e84d9aede54bbe2d44a56cccb5f6cf12211f93f52306df87077ecec5b712794c5a9b5dac6d615a3f301
@@ -14743,6 +14773,13 @@ __metadata:
   version: 6.3.0
   resolution: "camelcase@npm:6.3.0"
   checksum: 10c0/0d701658219bd3116d12da3eab31acddb3f9440790c0792e0d398f0a520a6a4058018e546862b6fba89d7ae990efaeb97da71e1913e9ebf5a8b5621a3d55c710
+  languageName: node
+  linkType: hard
+
+"camelize-ts@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "camelize-ts@npm:3.0.0"
+  checksum: 10c0/879a7a84a1c889eb71b46ad5933107324eeeda0b713367aebe22356e25039636b5ce2f460ff4f302621e3d3ed8b6b0f2bcd8baee5218a8a38ff2b71d2c2a0522
   languageName: node
   linkType: hard
 
@@ -20213,6 +20250,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"inclusion@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "inclusion@npm:1.0.1"
+  dependencies:
+    parent-module: "npm:^2.0.0"
+  checksum: 10c0/2f017d15b77b6b1308ed0bfd531da129f62342a9f2d70c8dff710c38af3ac6bd41f67194113bd6e65c0e1f554e938b083c36a412104572020b30a64a78111d2e
+  languageName: node
+  linkType: hard
+
 "indent-string@npm:^4.0.0":
   version: 4.0.0
   resolution: "indent-string@npm:4.0.0"
@@ -25124,6 +25170,15 @@ __metadata:
   dependencies:
     callsites: "npm:^3.0.0"
   checksum: 10c0/c63d6e80000d4babd11978e0d3fee386ca7752a02b035fd2435960ffaa7219dc42146f07069fb65e6e8bf1caef89daf9af7535a39bddf354d78bf50d8294f556
+  languageName: node
+  linkType: hard
+
+"parent-module@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "parent-module@npm:2.0.0"
+  dependencies:
+    callsites: "npm:^3.1.0"
+  checksum: 10c0/e4c5e34102c709df1932e1065dee53764fbd869f5a673beb8c3b4bcbbd4a7be16e3595f8846b24f52a77b9e96d8d499e68736ec690b108e55d95a5315f41e073
   languageName: node
   linkType: hard
 
@@ -30727,6 +30782,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"url-join@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "url-join@npm:5.0.0"
+  checksum: 10c0/ed2b166b4b5a98adcf6828a48b6bd6df1dac4c8a464a73cf4d8e2457ed410dd8da6be0d24855b86026cd7f5c5a3657c1b7b2c7a7c5b8870af17635a41387b04c
+  languageName: node
+  linkType: hard
+
 "url-parse@npm:^1.5.10, url-parse@npm:^1.5.3":
   version: 1.5.10
   resolution: "url-parse@npm:1.5.10"
@@ -30734,6 +30796,13 @@ __metadata:
     querystringify: "npm:^2.1.1"
     requires-port: "npm:^1.0.0"
   checksum: 10c0/bd5aa9389f896974beb851c112f63b466505a04b4807cea2e5a3b7092f6fbb75316f0491ea84e44f66fed55f1b440df5195d7e3a8203f64fcefa19d182f5be87
+  languageName: node
+  linkType: hard
+
+"url-template@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "url-template@npm:3.1.1"
+  checksum: 10c0/0947f4978665ced04bb0fe456f8a60ca4e1db283ce36da15193ee52c4a5461633dc9b5116ef8cf34bae4a31285ac6e7079f309badf211fe8bd1428d6ac56d28a
   languageName: node
   linkType: hard
 
