@@ -28061,20 +28061,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root@workspace:."
-  dependencies:
-    "@backstage/cli": "npm:^0.28.0"
-    "@backstage/e2e-test-utils": "npm:^0.1.1"
-    "@playwright/test": "npm:^1.32.3"
-    "@spotify/prettier-config": "npm:^12.0.0"
-    node-gyp: "npm:^10.0.0"
-    prettier: "npm:^2.3.2"
-    typescript: "npm:~5.4.0"
-  languageName: unknown
-  linkType: soft
-
 "rtl-css-js@npm:^1.16.1":
   version: 1.16.1
   resolution: "rtl-css-js@npm:1.16.1"
@@ -31631,6 +31617,20 @@ __metadata:
   checksum: 10c0/11b8ae8f6734b29d442a5acf1dff3a896cabbf49e7ffa01472ff6fa687a6e6f6a25889d06c10a41950e7a90fe89239fa78d95eab0c5eb654ca75f0ccd71ba8ed
   languageName: node
   linkType: hard
+
+"xlabs-developer-platform@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "xlabs-developer-platform@workspace:."
+  dependencies:
+    "@backstage/cli": "npm:^0.28.0"
+    "@backstage/e2e-test-utils": "npm:^0.1.1"
+    "@playwright/test": "npm:^1.32.3"
+    "@spotify/prettier-config": "npm:^12.0.0"
+    node-gyp: "npm:^10.0.0"
+    prettier: "npm:^2.3.2"
+    typescript: "npm:~5.4.0"
+  languageName: unknown
+  linkType: soft
 
 "xml-but-prettier@npm:^1.0.1":
   version: 1.0.1
