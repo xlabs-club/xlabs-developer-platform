@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@backstage-community/plugin-feedback": "^1.6.9",
+    "@backstage-community/plugin-rbac": "^1.32.4",
     "@backstage-community/plugin-tech-radar": "^1.0.0",
     "@backstage/app-defaults": "^1.5.12",
     "@backstage/catalog-model": "^1.7.0",
