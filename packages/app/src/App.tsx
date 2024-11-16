@@ -38,6 +38,8 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 import { configApiRef, useApi } from '@backstage/core-plugin-api';
+import { TechRadarPage } from '@backstage-community/plugin-tech-radar';
+import { ToolboxPage } from '@drodil/backstage-plugin-toolbox';
 
 const app = createApp({
   apis,
@@ -108,6 +110,8 @@ const routes = (
     <Route path="/search" element={<SearchPage />}>
       {searchPage}
     </Route>
+    <Route path="/toolbox" element={<ToolboxPage />} />
+    <Route path="/tech-radar" element={<TechRadarPage width={1500} height={800} />} />
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
   </FlatRoutes>

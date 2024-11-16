@@ -27,6 +27,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import { MyGroupsSidebarItem } from '@backstage/plugin-org';
 import GroupIcon from '@material-ui/icons/People';
+import CardTravel from '@mui/icons-material/CardTravel';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -83,6 +84,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       </SidebarGroup>
       <SidebarSpace />
       <SidebarDivider />
+      <SidebarItem icon={CardTravel} to="toolbox" text="ToolBox" />
       <SidebarGroup
         label="Settings"
         icon={<UserSettingsSignInAvatar />}
