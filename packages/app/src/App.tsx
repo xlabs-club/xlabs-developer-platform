@@ -62,6 +62,7 @@ const app = createApp({
     // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
     SignInPage: props => {
       const configApi = useApi(configApiRef);
+      // 开发环境使用guest账号，生产环境使用oauth2Proxy作为登录认证
       if (configApi.getString('auth.environment') === 'development') {
         return (
           <SignInPage
