@@ -46,7 +46,7 @@ Backstage 版本更新很频繁，保持最新版本的方法请参考官方文�
      # 只升级 @backstage 包
      yarn backstage-cli versions:bump
      # 按指定 pattern 升级包
-     yarn backstage-cli versions:bump --pattern '@{backstage,roadiehq}/*'
+     yarn backstage-cli versions:bump --pattern '@{backstage,backstage-community}/*'
     ```
 
 2. 从 backstage.json 获取当前项目版本，使用 [upgrade-helper](https://backstage.github.io/upgrade-helper/?from=1.30.0&to=1.31.1) 比对从 x 版本到 y 版本有哪些更新，根据 diff 手动合并到自己项目中。
