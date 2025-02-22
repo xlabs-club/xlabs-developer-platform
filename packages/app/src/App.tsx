@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { apiDocsPlugin, ApiExplorerPage } from '@backstage/plugin-api-docs';
 import {
   CatalogEntityPage,
@@ -29,16 +29,25 @@ import { Root } from './components/Root';
 import {
   AlertDisplay,
   OAuthRequestDialog,
+  ProxiedSignInPage,
   SignInPage,
 } from '@backstage/core-components';
 import { createApp } from '@backstage/app-defaults';
 import { AppRouter, FlatRoutes } from '@backstage/core-app-api';
 import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
+import { configApiRef, useApi } from '@backstage/core-plugin-api';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
+import { RbacPage } from '@backstage-community/plugin-rbac';
+import { PlaylistIndexPage, PlaylistPage } from '@backstage-community/plugin-playlist';
+import { HomepageCompositionRoot } from '@backstage/plugin-home';
+import { HomePage } from './components/home/HomePage';
+import * as plugins from './plugins';
+import { ExplorePage } from '@backstage-community/plugin-explore';
 
 const app = createApp({
   apis,
+  plugins: Object.values(plugins),
   bindRoutes({ bind }) {
     bind(catalogPlugin.externalRoutes, {
       createComponent: scaffolderPlugin.routes.root,
@@ -57,13 +66,29 @@ const app = createApp({
     });
   },
   components: {
-    SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    // SignInPage: props => <SignInPage {...props} auto providers={['guest']} />,
+    SignInPage: props => {
+      const configApi = useApi(configApiRef);
+      // 开发环境使用guest账号，生产环境使用oauth2Proxy作为登录认证
+      if (configApi.getString('auth.environment') === 'development') {
+        return (
+          <SignInPage
+            {...props}
+            providers={['guest']}
+          />
+        );
+      }
+      return <ProxiedSignInPage {...props} provider="oauth2Proxy" />;
+    },
   },
 });
 
 const routes = (
   <FlatRoutes>
-    <Route path="/" element={<Navigate to="catalog" />} />
+    {/* <Route path="/" element={<Navigate to="catalog" />} /> */}
+    <Route path="/" element={<HomepageCompositionRoot />}>
+      <HomePage />
+    </Route>;
     <Route path="/catalog" element={<CatalogIndexPage />} />
     <Route
       path="/catalog/:namespace/:kind/:name"
@@ -94,7 +119,11 @@ const routes = (
       {searchPage}
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
+    <Route path="/playlist" element={<PlaylistIndexPage />} />
+    <Route path="/playlist/:playlistId" element={<PlaylistPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/explore" element={<ExplorePage />} />
+    <Route path="/rbac" element={<RbacPage />} />;
   </FlatRoutes>
 );
 

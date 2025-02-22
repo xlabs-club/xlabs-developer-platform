@@ -1,9 +1,9 @@
 app:
-  title: Scaffolded Backstage App
+  title: 卫星实验室
   baseUrl: http://localhost:3000
 
 organization:
-  name: My Company
+  name: XLabs Club
 
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
@@ -64,6 +64,7 @@ techdocs:
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
+  environment: development
   providers:
     # See https://backstage.io/docs/auth/guest/provider
     guest: {}
@@ -82,17 +83,17 @@ catalog:
     - type: file
       target: ../../examples/entities.yaml
 
-    # Local example template
-    - type: file
-      target: ../../examples/template/template.yaml
-      rules:
-        - allow: [Template]
+    # # Local example template
+    # - type: file
+    #   target: ../../examples/template/template.yaml
+    #   rules:
+    #     - allow: [Template]
 
-    # Local example organizational data
-    - type: file
-      target: ../../examples/org.yaml
-      rules:
-        - allow: [User, Group]
+    # # Local example organizational data
+    # - type: file
+    #   target: ../../examples/org.yaml
+    #   rules:
+    #     - allow: [User, Group]
 
     ## Uncomment these lines to add more example data
     # - type: url

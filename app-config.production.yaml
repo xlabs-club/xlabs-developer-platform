@@ -1,3 +1,4 @@
+# 请注意，此文件在部署时，会用 k8s ConfigMap 全部替换掉
 app:
   # Should be the same as backend.baseUrl when using the `app-backend` plugin.
   baseUrl: http://localhost:7007

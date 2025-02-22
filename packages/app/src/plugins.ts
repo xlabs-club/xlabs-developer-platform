@@ -1,0 +1,1 @@
+export { shortcutsPlugin } from '@backstage-community/plugin-shortcuts';
