@@ -1,6 +1,6 @@
-# xlabs-developer-platform
+# Ganymede
 
-卫星实验室基于 Backstage 构建的内部开发者平台。
+Ganymede，木卫三，卫星实验室基于 Backstage 构建的内部开发者平台。
 
 效果展示请访问 [app.xlabs.club](https://app.xlabs.club)。
 
@@ -30,9 +30,9 @@ yarn dev
 yarn install --immutable
 yarn tsc && yarn build:backend
 # 编译镜像，需要安装 docker 并启用 docker buildx，示例
-yarn build-image --tag xlabs-developer-platform:dev --platform linux/amd64,linux/arm64 --load
+yarn build-image --tag ganymede:dev --platform linux/amd64,linux/arm64 --load
 # 发布镜像，需要先登录 docker hub
-# yarn build-image --tag nxest/xlabs-developer-platform:dev --platform linux/amd64 --push
+# yarn build-image --tag nxest/ganymede:dev --platform linux/amd64 --push
 ```
 
 ### Backstage 版本升级

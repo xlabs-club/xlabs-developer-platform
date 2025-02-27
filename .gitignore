@@ -72,3 +72,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+packaget-lock.json
+*/packaget-lock.json
