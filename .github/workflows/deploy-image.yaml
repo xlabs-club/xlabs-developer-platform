@@ -12,7 +12,7 @@ env:
   # REGISTRY: ghcr.io
   # IMAGE_NAME: ${{ github.repository }}
   REGISTRY: docker.io
-  IMAGE_NAME: nxest/xlabs-developer-platform
+  IMAGE_NAME: nxest/ganymede
 
 jobs:
   push:
